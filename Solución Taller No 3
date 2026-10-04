@@ -1,0 +1,294 @@
+1. Nombre del sistema
+Biblioteca Inteligente Universitaria**
+2. Descripción no técnica del caso
+Este sistema fue desarrollado para administrar los libros de una biblioteca universitaria.
+La aplicación permite registrar libros, buscarlos mediante su código, eliminarlos cuando sea necesario, atender solicitudes de préstamo de estudiantes y representar relaciones entre libros de una temática similar.
+ Los libros almacenan la siguiente información:
+- Código
+- Título
+- Autor
+Libros utilizados en las pruebas:
+- 101 - Python - Juan Perez
+- 150 - Bases de Datos - Carlos Ruiz
+- 205 - Estructuras de Datos - Ana Gomez
+
+3. Clases y estructuras utilizadas
+ Lista enlazada
+
+**Clases:**
+ 
+- Libro
+- NodoLibro
+- ListaLibros
+ 
+**Función:**
+ 
+Almacenar los libros de la biblioteca.
+ 
+Cola FIFO (Lista enlazada)
+ 
+**Clases:**
+ 
+- NodoCola
+- ColaEstudiantes
+ 
+**Función:**
+ 
+Administrar las solicitudes de préstamo de los estudiantes.
+ 
+Árbol Binario de Búsqueda (BST)
+ 
+**Clases:**
+ 
+- NodoBST
+- ArbolBST
+ 
+**Función:**
+ 
+Organizar los libros utilizando el código como clave para realizar búsquedas eficientes.
+ 
+---
+Grafo
+ 
+**Clase:**
+ 
+- Grafo
+ 
+**Función:**
+ 
+Representar relaciones entre libros relacionados por temática.
+ 
+---
+Cola con arreglo
+ 
+**Clase:**
+ 
+- ColaArreglo
+ 
+**Función:**
+ 
+Implementar una segunda versión de la cola utilizando un arreglo dinámico.
+ 
+Programa principal
+ 
+**Clase:**
+ 
+- Main
+ 
+**Función:**
+ 
+Ejecutar las pruebas del sistema y demostrar el funcionamiento de todas las estructuras implementadas.
+ 
+4. Justificación técnica de cada estructura elegida
+ 
+ListaLibros
+ 
+Se utilizó una lista enlazada simple para almacenar los libros de la biblioteca.
+ 
+Permite insertar y eliminar elementos dinámicamente sin reorganizar toda la estructura.
+ 
+**Operaciones implementadas:**
+ 
+- insertar()
+- buscar()
+- eliminar()
+- recorrer()
+ 
+---
+ColaEstudiantes
+ 
+Se utilizó una cola FIFO para gestionar las solicitudes de préstamo de los estudiantes.
+ 
+La cola respeta el principio:
+ 
+**FIFO (First In First Out)**
+ 
+El primer estudiante que llega es el primero en ser atendido.
+ 
+**Operaciones implementadas:**
+ 
+- encolar()
+- desencolar()
+ 
+---
+ ArbolBST
+ 
+Se utilizó un árbol binario de búsqueda para organizar los libros mediante el código.
+ 
+**Operaciones implementadas:**
+ 
+- insertar()
+- buscar()
+- inorden()
+- preorden()
+- postorden()
+- altura()
+ 
+La búsqueda se realiza de forma recursiva.
+ 
+El recorrido inorden permite mostrar los libros ordenados por código.
+ 
+---
+Grafo
+ 
+Se utilizó un grafo para representar relaciones entre libros relacionados por temática.
+ 
+**Consultas implementadas:**
+ 
+- mostrarVecinos()
+- mostrarGrado()
+ 
+**Ejemplo:**
+ 
+Python -------- Bases de Datos
+|
+|
+Estructuras de Datos
+```
+ 
+ColaArreglo
+ 
+Se implementó una segunda versión de la cola utilizando un arreglo dinámico.
+ 
+El objetivo fue comparar dos implementaciones distintas de la misma estructura y demostrar que producen el mismo comportamiento para el usuario.
+ 
+5. Comparación entre Cola con Arreglo y Cola con Lista Enlazada
+ 
+Cola con Lista Enlazada
+ 
+**Ventajas**
+ 
+- Crecimiento dinámico.
+- No requiere tamaño inicial.
+ 
+| Operación | Complejidad |
+|------------|------------|
+| Encolar | O(1) |
+| Desencolar | O(1) |
+ 
+---
+ 
+Cola con Arreglo
+ 
+**Ventajas**
+ 
+- Implementación sencilla.
+- Acceso directo a los elementos almacenados.
+ 
+| Operación | Complejidad |
+|------------|------------|
+| Encolar | O(1) |
+| Desencolar | O(n) |
+ 
+---
+ 
+Resultado obtenido
+ 
+Las dos implementaciones generan exactamente el mismo resultado:
+ 
+```text
+Laura
+Pedro
+Juan
+```
+ 
+La diferencia se encuentra únicamente en la estructura utilizada internamente.
+ 
+6. Experimento de alturas
+ 
+Tabla de resultados
+ 
+| Códigos insertados | Número de libros | Altura obtenida |
+|--------------------|------------------|-----------------|
+| 101, 150, 205 | 3 | 3 |
+ 
+Dibujo del árbol real
+ 
+101
+\
+150
+\
+205
+
+Explicación del resultado
+ 
+Se insertaron tres libros con códigos 101, 150 y 205.
+ 
+Como los códigos fueron ingresados en orden ascendente, cada nuevo nodo se ubicó a la derecha del anterior. Esto produjo un árbol desbalanceado hacia la derecha y alcanzó una altura de 3 niveles.
+ 
+ 7. Rotación AVL
+ 
+Árbol antes de la rotación
+ 
+101
+\
+150
+\
+205
+```
+ Rotación simple a la izquierda
+ 
+150
+/ \
+101 205
+Evidencia
+ 
+Insertar aquí la fotografía o captura del dibujo realizado a mano durante la sustentación.
+ 
+8. Instrucciones para ejecutar el programa
+ 
+
+9. Casos de prueba utilizados
+ 
+Caso normal
+ 
+Se verificó:
+ 
+- Inserción de libros.
+- Búsqueda de libros.
+- Eliminación de libros.
+- Atención de estudiantes mediante cola.
+- Recorridos del árbol BST.
+- Búsqueda recursiva en el BST.
+- Cálculo de altura.
+- Consultas del grafo.
+- Comparación entre cola enlazada y cola con arreglo.
+ 
+Caso límite 1
+ 
+Búsqueda de un libro inexistente:
+ 
+lista.buscar(999);
+ 
+**Resultado:**
+
+null
+ 
+Caso límite 2
+ 
+Intentar desencolar una cola vacía:
+
+colaVacia.desencolar();
+
+**Resultado:**
+
+Cola vacía
+
+ 10. Limitaciones y posibles mejoras
+ Limitaciones
+ 
+- La información se almacena únicamente en memoria.
+- Los datos se pierden al cerrar el programa.
+- El árbol implementado es un BST simple y no se balancea automáticamente.
+- El sistema funciona mediante consola y no posee interfaz gráfica.
+ 
+Posibles mejoras
+ 
+- Implementar un árbol AVL completo.
+- Incorporar persistencia mediante una base de datos.
+- Agregar una interfaz gráfica.
+- Permitir la gestión completa de préstamos y devoluciones.
+ 
+ 
+## 11. Enlace al video
+https://fumcc-my.sharepoint.com/:v:/g/personal/nataly_patino_fumc_edu_co/IQBfhQDjuM-aS6ukKCweheLfAdGtlFiG6q3NYhGnZCsCZ7U?e=wsLMOh&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifSwicGxheWJhY2tPcHRpb25zIjp7fX0%3D
